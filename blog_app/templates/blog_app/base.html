@@ -18,20 +18,18 @@
 <body class="loader">
 <nav class="navbar navbar-default techfont custom-navbar">
     <div class="container">
-        <ul class="nav navbar-nav">
-            <li><a class="navbar-brand bigbrand" href="{% url 'post_list' %}">My blog</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="https://github.com/SvitlanaGF">Github</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
+        <a class="navbar-brand bigbrand" href="{% url 'post_list' %}">My blog</a>
+        <ul class="nav justify-content-end">
+{#            <li></li>#}
+            <li class="nav-item" style="padding-right: 10px" ><a href="{% url 'about' %}">About</a></li>
+            <li class="nav-item" style="padding-right: 10px"><a href="https://github.com/SvitlanaGF">Github</a></li>
             {% if user.is_authenticated %}
-                <li><a href="{% url 'post_new' %}">New Post</a></li>
-                <li><a href="{% url 'post_draft_list' %}">Drafts</a></li>
-                <li><a href="{% url 'logout' %}">Log Out</a></li>
-                <li><a>Welcome, {{ user.username }}</a></li>
+                <li class="nav-item" style="padding-right: 10px"><a href="{% url 'post_new' %}">New Post</a></li>
+                <li class="nav-item" style="padding-right: 10px"><a href="{% url 'post_draft_list' %}">Drafts</a></li>
+                <li class="nav-item" style="padding-right: 10px"><a href="{% url 'logout' %}">Log Out</a></li>
+                <li class="nav-item" style="padding-right: 10px"><a>Welcome, {{ user.username }}</a></li>
                 {% else %}
-                <li><a class="nav navbar-right" href="{% url 'login' %}"><span class="glyphicon glyphicon-user">Log In</span></a></li>
+                <li class="nav-item" style="padding-right: 10px"><a class="nav navbar-right" href="{% url 'login' %}"><span class="glyphicon glyphicon-user">Log In</span></a></li>
             {% endif %}
 
         </ul>
